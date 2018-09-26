@@ -10,7 +10,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom("Double", 30);
+        bedroom = new Bedroom("Double", 30, 2);
         guest1 = new Guest();
         guest2 = new Guest();
         guest3 = new Guest();
@@ -25,11 +25,6 @@ public class BedroomTest {
     public void canGetNightRate(){
         assertEquals(30, bedroom.getNightrate());
     }
-
-//    @Test
-//    public void canGetBedroomGuestList(){
-//        assertEquals();
-//    }
 
     @Test
     public void canGetNumberOfGuests(){
@@ -48,5 +43,10 @@ public class BedroomTest {
         assertEquals (1, bedroom.getGetNumberOfGuests());
         bedroom.RemoveGuest(guest1);
         assertEquals(0, bedroom.getGetNumberOfGuests());
+    }
+
+    @Test
+    public void canGetCapacity() {
+        assertEquals(2, bedroom.getCapacity());
     }
 }

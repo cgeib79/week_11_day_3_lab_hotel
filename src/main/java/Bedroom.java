@@ -4,6 +4,14 @@ public class Bedroom {
     private String type;
     private int nightrate;
     private ArrayList<Guest> bedroomGuestList;
+    private int capacity;
+
+    public Bedroom(String type, int nightrate, int capacity){
+        this.type = type;
+        this.nightrate = nightrate;
+        this.capacity = capacity;
+        this.bedroomGuestList = new ArrayList<>();
+    }
 
     public String getType() {
         return type;
@@ -17,13 +25,6 @@ public class Bedroom {
         return bedroomGuestList;
     }
 
-    public Bedroom(String type, int nightrate){
-       this.type = type;
-       this.nightrate = nightrate;
-       this.bedroomGuestList = new ArrayList<>();
-
-
-    }
 
     public int getGetNumberOfGuests() {
         return this.bedroomGuestList.size();
@@ -36,6 +37,10 @@ public class Bedroom {
 
     public void RemoveGuest(Guest guest) {
         this.bedroomGuestList.remove(guest);
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 }
 
